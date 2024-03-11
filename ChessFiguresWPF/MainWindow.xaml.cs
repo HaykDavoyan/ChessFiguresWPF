@@ -56,8 +56,24 @@ namespace ChessFiguresWPF
 
                             ChessBoardCanvas.Children.Add(figureImage);
                         }
+                        else
+                        {
+                            MessageBox.Show("Position is already occupied.", "Invalid Position", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid coordinates. Please enter coordinates between A1 and H8.", "Invalid Coordinates", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Invalid coordinates format. Please enter coordinates in the format [A-H][1-8].", "Invalid Format", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select color, figure, and enter coordinates.", "Incomplete Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -84,4 +100,3 @@ namespace ChessFiguresWPF
         }
     }
 }
-
